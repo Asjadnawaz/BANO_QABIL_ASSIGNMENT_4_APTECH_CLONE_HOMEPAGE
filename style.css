@@ -1,0 +1,761 @@
+/* =========================
+   APTECH LEARNING - HOMEPAGE
+   Clean CSS Stylesheet
+   ========================= */
+
+/* ----- CSS Variables (for easy customization) ----- */
+:root {
+    --primary-color: #1a1a2e;
+    --accent-color: #f5a623;
+    --dark-bg: #0d1b3e;
+    --purple-bg: #3d1f5f;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --border-color: #e0e0e0;
+    --footer-bg: #fafafa;
+}
+
+/* ----- Reset & Base Styles ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 55px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.search-icon {
+    font-size: 18px;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    background-color: var(--light-gray);
+    padding: 20px 0;
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 20px;
+}
+
+/* ----- Left Sidebar ----- */
+.hero-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar-title {
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* Guidance Form */
+.guidance-form {
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+}
+
+.input-group i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.input-group input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.go-btn {
+    background-color: #555;
+    color: var(--white);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    transition: background-color 0.3s;
+}
+
+.go-btn:hover {
+    background-color: #333;
+}
+
+/* Searched Topics */
+.searched-topics {
+    clear: both;
+    margin-top: 20px;
+}
+
+.searched-topics h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.searched-topics ul {
+    list-style: none;
+}
+
+.searched-topics li {
+    padding: 4px 0;
+}
+
+.searched-topics a {
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.searched-topics a:hover {
+    color: var(--accent-color);
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.contact-info i {
+    color: var(--text-dark);
+    margin-right: 8px;
+}
+
+.franchise-text {
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+
+/* ----- Right Main Content ----- */
+.hero-main {
+    flex: 1;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ==================== BANNER CAROUSEL ==================== */
+
+.banner-carousel {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+
+.banner-track {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: slideTrack 12s infinite;
+}
+
+
+.banner-slide {
+    width: 33.333%;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: kenBurns 12s ease-in-out infinite;
+}
+
+/* Image slowly zooms in then back out */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes slideTrack {
+
+    0%,
+    30% {
+        transform: translateX(0%);
+    }
+
+    33.33% {
+        transform: translateX(-33.333%);
+    }
+
+    63.33% {
+        transform: translateX(-33.333%);
+    }
+
+    66.66% {
+        transform: translateX(-66.666%);
+    }
+
+    96.66% {
+        transform: translateX(-66.666%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Section Heading */
+.section-heading {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 30px 20px 20px;
+    color: var(--text-dark);
+}
+
+/* Career Cards */
+.career-cards {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px 20px;
+}
+
+.career-card {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.career-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Banners */
+.acnpro-banner,
+.smartpro-banner,
+.quickskills-banner,
+.comm-excellence,
+.future-ready {
+    margin: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.acnpro-banner img,
+.smartpro-banner img,
+.quickskills-banner img,
+.comm-excellence img,
+.future-ready img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ==================== GLOBAL STATS ==================== */
+.global-stats {
+    background-color: var(--dark-bg);
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.global-stats h3 {
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 18px;
+    color: var(--white);
+    margin-top: 5px;
+}
+
+.stat-divider {
+    width: 2px;
+    height: 80px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+
+/* ==================== VIDEO SECTION ==================== */
+.video-section {
+    margin: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-section iframe {
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+
+/* ==================== TESTIMONIALS ==================== */
+.testimonials {
+    display: flex;
+    gap: 30px;
+    padding: 40px 30px;
+    background-color: var(--light-gray);
+    margin: 20px;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.testimonial-left {
+    flex: 1;
+}
+
+.testimonial-label {
+    color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.testimonial-left h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+
+.testimonial-right {
+    flex: 1.5;
+}
+
+/* Carousel box */
+.t-carousel {
+    position: relative;
+    height: 240px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.t-track {
+    height: 500%; /* 5 images * 100% */
+    animation: slideTrackUp 20s infinite;
+}
+
+/* Individual slide */
+.t-slide {
+    width: 100%;
+    height: 20%; 
+    object-fit: contain;
+}
+
+
+@keyframes slideTrackUp {
+    0%, 15%  { transform: translateY(0); }
+    20%, 35% { transform: translateY(-20%); }
+    40%, 55% { transform: translateY(-40%); }
+    60%, 75% { transform: translateY(-60%); }
+    80%, 95% { transform: translateY(-80%); }
+    100%     { transform: translateY(0); }
+}
+
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
+}
+
+.footer-top {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footer-tagline {
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.footer-tagline span {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.footer-benefits {
+    display: flex;
+    gap: 15px;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.benefit-item i {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.benefit-item span {
+    font-size: 12px;
+    color: var(--text-gray);
+    line-height: 1.3;
+}
+
+/* Footer Section Titles */
+.footer-section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-section-title span:nth-child(2) {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.title-line {
+    flex: 1;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Initiatives & Awards */
+.initiatives-logos,
+.awards-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.initiatives-logos img,
+.awards-logos img {
+    height: 45px;
+    object-fit: contain;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.affiliations-title {
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.affiliations-logos {
+    display: flex;
+    gap: 20px;
+}
+
+.affiliations-logos img {
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom-left {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+.footer-bottom-left i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+.footer-bottom-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom-right a {
+    font-size: 13px;
+    color: var(--text-gray);
+    transition: color 0.3s;
+}
+
+.footer-bottom-right a i {
+    margin-right: 5px;
+}
+
+.footer-bottom-right a:hover {
+    color: var(--accent-color);
+}
+
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-sidebar {
+        width: 100%;
+    }
+
+    .career-cards {
+        flex-direction: column;
+    }
+
+    .stats-row {
+        gap: 25px;
+    }
+
+    .stat-number {
+        font-size: 48px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .testimonials {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .banner-carousel {
+        height: 250px;
+    }
+
+    .stats-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stat-divider {
+        width: 60px;
+        height: 2px;
+        border-left: none;
+        border-top: 2px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    .testimonial-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .video-section iframe {
+        height: 250px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-benefits {
+        flex-wrap: wrap;
+    }
+}
