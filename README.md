@@ -1,6 +1,6 @@
 # Aptech Learning Pakistan — Clone Homepage
 
-A pixel-faithful front-end clone of the [Aptech Learning Pakistan](https://aptech-education.com.pk) website, built as **Assignment 4** for the **Bano Qabil Web 1 Course** (Aptech).
+A pixel-faithful front-end clone of the [Aptech Learning Pakistan](https://aptech-education.com.pk) website, built as **Assignment 4** for the **Bano Qabil Web 1 Course**.
 
 ---
 
